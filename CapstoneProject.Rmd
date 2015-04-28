@@ -5,7 +5,7 @@ date: "Tuesday, April 28, 2015"
 output: html_document
 ---
 
-I'm interested in the following three countries: South Africa, New Zealand and Australia.
+I'm interested in the following three countries: South Africa, New Zealand and Australia.  For each country, I'm interested in the life expectancy over time in each of these mighty rugby nations.
 
 ```{r, echo=FALSE, message=FALSE}
 gapminder <- read.csv("C:/Users/Julie/Documents/wsu_SC/gapminder.csv")
@@ -16,4 +16,18 @@ TriNations <- gapminder %>%
   ggplot(aes(y=year, x=lifeExp)) + geom_point() + facet_grid(~country)
   plot(TriNations)
 ```
+
+As we see, South Africa follows a distinctly different pattern than either Australia or New Zealand.  Australia and New Zealand each have continuous positive growth in their life expectancies over time.  South Africa goes from improving their life expectancy to seeing a remarkable decrease following the end of apartheid.
+
+I've committed this data file to git using my notes from this morning.
+
+For the year 2007, the following figure shows the mean, min and max life expectancies for each continent.
+
+```{r, echo=FALSE, message=FALSE}
+gapminder %>%
+  group_by(continent) %>%
+  summarize(meanLE = round(mean(lifeExp), 1), minLE = round(min(lifeExp),1), maxLE = round(max(lifeExp), 1))
+
+```
+
 

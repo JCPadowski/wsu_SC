@@ -1,0 +1,115 @@
+Unix Shell BASH
+
+~~~~A few commands~~~~~~~~~
+echo= prints whatever you write after it
+ls= list items in current directory
+-l = flag gives you long format output
+
+can get back the last command with the up arrow
+if want to get up one level in a directory: cd ..
+
+ex. ls -l ~/Desktop = lists all the stuff on your desktop
+
+pwd = tells you what directory you're in (equiv to getwd() in R)
+
+cd = change working directory.  if you want to change it back to your home directory, just use a  "cd ~"
+
+can use long directory format, or if you know where you are and want to drill down further, can just list the folder 
+
+can access folders w/ spaces in title by putting it in quotations
+"cd /Users/Julie/Desktop/Statistical Learning"
+
+~~~~~~~Challenge #1~~~~~~~~~~~
+- Navigate to Desktop
+cd C:/Users/Julie/Desktop
+or
+cd ~/Desktop
+
+- List contents
+ls
+
+- Back to home directory
+cd ~
+or
+ls ~/Desktop
+
+~~~~~More on listing stuff~~~~~~~~~~
+When looking in a folder with -l
+can see who has privlegdges to read/write, what group a person belongs to, size of files in bytes, modification time/date, file name
+
+ls has lots of other functions than -l
+ls -a lists hidden files (usu. starts with a .filename, if up one directory its ..filename)
+ls -l lists long format
+ls -lh lists files as "human readable" file sizes
+ls -S sort by file size
+ls -t sort by when modified
+
+~~~~Challenge #2~~~~~~~
+- Pick a new directory
+cd "C:/Users/Julie/Desktop/Statistical Learning"
+
+- list files in long format, by file size, with human readable file sizes
+ls -lhS
+
+~~~~~~ A few more functions for file viewing~~~~~~~~~~~
+In GitBash, help isn't available but it is online, or you can use function double-dash help (ex. ls --help)
+
+head file.csv gives first 6 lines of file
+
+wc file.csv will show the line, word and byte count for a file
+
+~~~~~File Modifications~~~~~~~~~~
+
+Create a new empty file; touch NAME
+Remove a file: rm -i NAME 
+Making notes: use command "nano"
+Create a new directory: mkdir testdirectory
+Create multiple directories at same time mkdir dir1 dir2
+Copying files: cp filename locationtosave
+Moving files: mv filename locationtomove
+
+ ~~~~~~Challenge #3~~~~~~~~~~~~
+Create two new directories in our class folder, one named "R" and the other named "figures"
+
+mkdir C:/Users/Julie/Documents/wsu_SC/R
+mkdir C:/Users/Julie/Documents/wsu_SC/figures
+
+Copying a bunch of files
+Make a new folder on the desktop: mkdir scratchpad
+Redirect to new directory: cd scratchpad
+Make a few new directories in scratchpad: mkdir dira dirb dirc
+Copy all the files from wsu_SC into the scratchpad directory: cp C:/Users/Julie/Documents/wsu_SC*.R .
+
+To remove a whole directory: rm -r scratchpad
+
+~~~~~~Challenge #5 ~~~~~~~~~
+Using the shell create a folder on the desktop with materials from this workshop like this:
+
+swc-wsu
+- data/
+--data here
+- figures/
+-- figures here
+- notes/
+-- notes here
+- R/
+-- notes here
+
+mkdir swc-wsu
+mkdir data figures notes R
+cd C:/Users/Julie/Documents/wsu_SC
+mv *.csv C:/Users/Julie/Desktop/swc-wsu/data
+mv notes.txt C:/Users/Julie/Desktop/swc-wsu/notes
+mv *.R C:/Users/Julie/Desktop/swc-wsu/R
+mv testplot.pdf C:/Users/Julie/Desktop/swc-wsu/figures
+
+~~~~~Wildcards~~~~~~~~~~~
+*  matches any character (can be multiple)
+? matches a single character
+[water] matches whats in the brackets
+[!water] match characters NOT in the dataset
+
+~~~~~~~~~~History~~~~~~~~~~~~~~
+History of commands: history
+File directories of a program: which PROGRAM
+

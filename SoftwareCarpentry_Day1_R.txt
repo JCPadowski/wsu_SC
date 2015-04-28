@@ -1,0 +1,4 @@
+run R as Run Administrator in start menu
+
+install.packages("dplyr")
+library("dplyr")

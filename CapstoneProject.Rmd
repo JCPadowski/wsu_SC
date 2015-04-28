@@ -1,0 +1,19 @@
+---
+title: "Software Carpentry Workshop Capstone Project"
+author: "Julie"
+date: "Tuesday, April 28, 2015"
+output: html_document
+---
+
+I'm interested in the following three countries: South Africa, New Zealand and Australia.
+
+```{r, echo=FALSE, message=FALSE}
+gapminder <- read.csv("C:/Users/Julie/Documents/wsu_SC/gapminder.csv")
+library("dplyr")
+library("ggplot2")
+TriNations <- gapminder %>%
+  filter(country %in% c("South Africa", "New Zealand", "Australia")) %>%
+  ggplot(aes(y=year, x=lifeExp)) + geom_point() + facet_grid(~country)
+  plot(TriNations)
+```
+
